@@ -11,15 +11,16 @@ mysql = MySQL()
 app = Flask(__name__)
 
 # MySQL configurations
-app.config['MYSQL_DATABASE_HOST'] = os.environ.get('DB_HOST')
+app.config['MYSQL_DATABASE_HOST'] = os.environ.get('localhost')
 app.config['MYSQL_DATABASE_PORT'] = 3306
-app.config['MYSQL_DATABASE_USER'] = os.environ.get('DB_USER')
-app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get('DB_PASSWORD')
-app.config['MYSQL_DATABASE_DB'] = os.environ.get('DB_SCHEMA')
+app.config['MYSQL_DATABASE_USER'] = os.environ.get('root')
+app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get('')
+app.config['MYSQL_DATABASE_DB'] = os.environ.get('db_junebot')
 mysql.init_app(app)
 
-CHANNEL_ACCESS_TOKEN = os.environ.get('CHANNEL_ACCESS_TOKEN')
-CHANNEL_SECRET = os.environ.get('CHANNEL_SECRET')
+
+CHANNEL_ACCESS_TOKEN = os.environ.get('7YR60AJ855Zu1Etxsc7aCdFqhip1o8yAKj7PzLe90ClE9Po0fz5o81BeghtpCki4+zFZ7FrYjjbrFvQw84+Axi+P1zWPnxSCTl/lF5gVTDaDqdC5IHk30qnjo7GQ1hHKizexgGNpBPn/Fwz3slJqkQdB04t89/1O/w1cDnyilFU=')
+CHANNEL_SECRET = os.environ.get('c3aa02ca5442a7640d2c577f936da0d4')
 
 line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(CHANNEL_SECRET)
